@@ -1,0 +1,103 @@
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(252, 252, 241);
+}
+
+body {
+    font-family: Verdana, Arial, sans-serif;
+    color: #222;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    text-align: center;
+}
+
+.banner img {
+    height: 80px;
+    width: 980px;
+}
+
+.sign_up_in {
+    text-align: center;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.sign_up_in ul {
+    width: 980px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.sign_up_in ul li {
+    list-style: none;
+    margin-left: 30px;
+    font-size: 18px;
+    color: rgb(102, 102, 102)
+}
+
+.sign_up_in ul li:nth-last-child(1) {
+    margin-right: 25px;
+}
+
+.sign_up_in ul li a {
+    text-decoration: none;
+}
+
+.menu {
+    background: url(../Image/background_menu.png) repeat-x transparent;
+    background-size: 10px 135px;
+    height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 140px;
+    height: 60px;
+}
+
+.menu ul {
+    display: flex;
+    padding-right: 300px;
+}
+
+.menu ul li {
+    list-style: none;
+    padding-left: 20px;
+    padding-top: 40px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.Muavengay {
+    width: 93px;
+    height: 76px;
+}
+
+.logo:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.Muavengay {
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
