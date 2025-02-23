@@ -3,6 +3,10 @@ main {
     flex-direction: column;
 }
 
+.main_menu {
+    padding: 0 20%;
+}
+
 .main_menu ul {
     display: flex;
     list-style: none;

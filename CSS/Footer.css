@@ -16,6 +16,10 @@ footer {
     width: 90px;
 }
 
+.footer_logo a {
+    text-decoration: none;
+}
+
 .footer_connect {
     padding: 10px 200px;
     border-bottom: 3px solid black;

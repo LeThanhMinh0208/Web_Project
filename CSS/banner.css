@@ -1,0 +1,50 @@
+.navbar_on_main {
+    background-color: rgb(240, 240, 230);
+    height: 25px;
+    padding-left: 20%;
+}
+
+.navbar_on_main p {
+    margin-top: 0;
+}
+
+.navbar_on_main a {
+    text-decoration: none;
+    color: gray;
+}
+
+.zalopay {
+    padding-left: 20%;
+    margin: 20px 0px;
+}
+
+.zalopay h2 {
+    color: red;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.main_banner {
+    display: flex;
+    padding: 0 20%;
+    margin-bottom: 70px;
+}
+
+.main_banner img {
+    width: 100%;
+    height: 500px;
+}
+
+.main_baner_text {
+    padding-left: 50px;
+}
+
+.main_banner_text_title {
+    font-weight: bold;
+}
+
+.main_baner_text a {
+    font-size: small;
+    color: rgb(211, 61, 32);
+    text-decoration: none;
+}
