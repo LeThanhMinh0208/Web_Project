@@ -19,6 +19,34 @@ main {
     border-right: 1px solid black;
 }
 
+.dropdown-menu {
+    display: none;
+    background-color: #444444 !important;
+}
+
+.border_dropdown {
+    border: 3px solid rgb(130, 130, 130) !important;
+    margin: -4px 4px;
+}
+
+.dropdown-menu a {
+    color: white !important;
+    padding-right: 30px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    color: red !important;
+    background-color: #444444 !important;
+}
+
 .main_menu img {
     width: 140px;
     height: 90px;
@@ -34,11 +62,44 @@ main {
 
 .TieuDe {
     background: url(../Image/bg_h3_line.jpg) repeat-x scroll left center rgba(0, 0, 0, 0);
-    margin: 0 17%;
+    margin: 0 10%;
 }
 
 .event {
     text-align: center;
+}
+
+.event hr {
+    border: 2px solid black;
+    margin: 0 10%;
+    opacity: 1;
+}
+
+.three_img {
+    margin: 0 10%;
+    display: flex;
+}
+
+.three_img img {
+    height: 300px;
+    margin: 20px 5px;
+    border: 2px solid black;
+    padding: 5px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.three_img img:hover {
+    opacity: 0.8;
+    transform: scale(0.9);
+}
+
+.col_f img,
+.col_l img {
+    width: 300px;
+}
+
+.col_m img {
+    width: 620px;
 }
 
 .slideshow {
@@ -194,4 +255,101 @@ main {
     color: white;
     font-size: 24px;
     cursor: pointer;
+}
+
+.red_shape {
+    background-color: rgb(233, 1, 1);
+    width: 340px;
+    height: 40px;
+    position: relative;
+    left: 38.5%;
+    margin-top: 20px;
+}
+
+.right {
+    position: absolute;
+    right: 0;
+}
+
+.left {
+    position: absolute;
+    left: 0;
+}
+
+.red_shape span {
+    position: absolute;
+    color: white;
+    left: 45px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.event_img {
+    height: 240px;
+    width: 150px;
+}
+
+.container_event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.event-select-custom-carousel {
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+}
+
+.event-select-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.event-select-carousel-item-custom {
+    min-width: 25%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.event-select_img {
+    width: 100%;
+}
+
+.event-select-carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.event-select-carousel-btn {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    pointer-events: auto;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 60px;
+}
+
+.event-select-carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.event-select_prv {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+.event-select_next {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
 }

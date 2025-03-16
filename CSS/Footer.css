@@ -1,4 +1,6 @@
 footer {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     margin-top: 30px;
     color: rgb(99, 99, 99);
@@ -12,7 +14,7 @@ footer {
 }
 
 .footer_logo a img {
-    height: 44px;
+    height: 40px;
     width: 90px;
 }
 
@@ -71,11 +73,10 @@ footer {
 
 .footer_company img {
     width: 130px;
-    margin-top: 20px;
 }
 
 .footer_background_end {
     background-image: url(../Image/footer_End.jpg);
-    width: 100%;
+    background-size: contain;
     height: 100px;
 }
