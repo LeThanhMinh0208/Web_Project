@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="stylesheet" href="../CSS/Footer.css">
     <link rel="stylesheet" href="../CSS/Trangchu.css">
+    <link rel="stylesheet" href="../Bootstrap/bootstrap.min.css">
+    <script src="../Bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../JS/Trangchu.js"></script>
 
 </head>
 
@@ -76,15 +79,218 @@
                     </a>
                 </li>
             </ul>
-            <hr>
-            <hr>
+            <hr style="width: 100%; border: 5px;">
+            <hr style="width: 100%; border: 5px;">
+
         </div>
-        <div class="slideshow">
+        <div class="slideshow" style="">
+            <div class="container">
+                <div id="cgvCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Dấu hiệu điều hướng -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#cgvCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#cgvCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#cgvCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#cgvCarousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#cgvCarousel" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#cgvCarousel" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#cgvCarousel" data-bs-slide-to="6"></button>
+                        <button type="button" data-bs-target="#cgvCarousel" data-bs-slide-to="7"></button>
+                        <button type="button" data-bs-target="#cgvCarousel" data-bs-slide-to="8"></button>
+                    </div>
+
+                    <!-- Các slide -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Image/sls1.jpg" class="d-block w-100" alt="Phim Sát Thủ Vô Cùng Cực">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Image/sls2.jpg" class="d-block w-100" alt="Mã Giới Thiệu CGV">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Image/sls3.jpg" class="d-block w-100" alt="Mã Giới Thiệu CGV">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Image/sls4.jpg" class="d-block w-100" alt="Mã Giới Thiệu CGV">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Image/sls5.jpg" class="d-block w-100" alt="Mã Giới Thiệu CGV">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Image/sls6.png" class="d-block w-100" alt="Mã Giới Thiệu CGV">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Image/sls7.jpg" class="d-block w-100" alt="Mã Giới Thiệu CGV">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Image/sls8.png" class="d-block w-100" alt="Mã Giới Thiệu CGV">
+                        </div>
+                    </div>
+
+                    <!-- Nút điều hướng -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#cgvCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" ></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#cgvCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
         </div>
+
         <div class="movie_selection">
             <div class="TieuDe">
                 <img src="../Image/h3_movie_selection.gif" alt="">
             </div>
+            <div class="container mt-4 mb-4">
+                <div class="select-custom-carousel">
+                    <div class="select-carousel-track">
+                        <!--Select 1-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/v81sGxKvBfk?rel=0&showinfo=0&autoplay=1">
+                            </div><img src="../Image/select1.jpg" class="select_img"></div>
+                        <!--Select 2-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/fQKxDM-hxoU">
+                            </div><img src="../Image/select2.jpg" class="select_img"></div>
+                        <!--Select 3-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/kFT4D0o9IZ4">
+                            </div><img src="../Image/select3.jpg" class="select_img"></div>
+                        <!--Select 4-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/FNBbFHgPzyY">
+                            </div><img src="../Image/select4.jpg" class="select_img"></div>
+                        <!--Select 5-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/TiM6fFuP2zU">
+                            </div><img src="../Image/select5.jpg" class="select_img"></div>
+                        <!--Select 6-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/wr6MeifZCUs">
+                            </div><img src="../Image/select6.jpg" class="select_img"></div>
+                        <!--Select 7-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/wfPTz0A23ns">
+                            </div><img src="../Image/select7.jpg" class="select_img"></div>
+                        <!--Select 8-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/i0rF0-4eaeE">
+                            </div><img src="../Image/select8.jpg" class="select_img"></div>
+                        <!--Select 9-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/SOg9Y9lGpbo">
+                            </div><img src="../Image/select9.jpg" class="select_img"></div>
+                        <!--Select 10-->
+                        <div class="select-carousel-item-custom">
+                            <div id="videoModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="select-overlay">
+                                <img src="../Image/play.png" alt="Play" class="play-btn" data-video="https://www.youtube.com/embed/o2UFoLEalxE">
+                            </div><img src="../Image/select10.jpg" class="select_img"></div>
+                    </div>
+
+                    <div class="select-carousel-controls">
+                        <button class="select-carousel-btn select_prv" id="prevBtn">&#9665;</button>
+                        <button class="select-carousel-btn select_next" id="nextBtn">&#9655;</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const track = document.querySelector(".select-carousel-track");
+                    const prevBtn = document.getElementById("prevBtn");
+                    const nextBtn = document.getElementById("nextBtn");
+
+                    let currentIndex = 0;
+                    const itemWidth = document.querySelector(".select-carousel-item-custom").offsetWidth;
+                    const totalItems = document.querySelectorAll(".select-carousel-item-custom").length;
+                    const visibleItems = 4;
+
+                    nextBtn.addEventListener("click", function() {
+                        if (currentIndex < totalItems - visibleItems) {
+                            currentIndex++;
+                            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                        }
+                    });
+
+                    prevBtn.addEventListener("click", function() {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                        }
+                    });
+                });
+            </script>
+
         </div>
         <div class="event">
             <div class="TieuDe">

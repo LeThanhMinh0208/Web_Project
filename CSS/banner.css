@@ -1,7 +1,7 @@
 .navbar_on_main {
     background-color: rgb(240, 240, 230);
     height: 25px;
-    padding-left: 20%;
+    padding-left: 15%;
 }
 
 .navbar_on_main p {
@@ -14,7 +14,7 @@
 }
 
 .zalopay {
-    padding-left: 20%;
+    padding-left: 15%;
     margin: 20px 0px;
 }
 
@@ -26,17 +26,19 @@
 
 .main_banner {
     display: flex;
-    padding: 0 20%;
+    padding: 0 15%;
     margin-bottom: 70px;
 }
 
 .main_banner img {
     width: 100%;
     height: 500px;
+    flex: 1;
 }
 
 .main_baner_text {
-    padding-left: 50px;
+    padding-left: 30px;
+    flex: 2;
 }
 
 .main_banner_text_title {

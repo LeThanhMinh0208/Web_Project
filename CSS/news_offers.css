@@ -1,7 +1,7 @@
 .navbar_on_main {
     background-color: rgb(240, 240, 230);
     height: 25px;
-    padding-left: 20%;
+    padding-left: 15%;
 }
 
 .navbar_on_main p {
@@ -16,7 +16,7 @@
 .navbar_on_main {
     background-color: rgb(240, 240, 230);
     height: 25px;
-    padding-left: 20%;
+    padding-left: 15%;
 }
 
 .navbar_on_main p {
@@ -63,9 +63,8 @@
 }
 
 .news {
-    margin: 50px 17% 20px;
+    margin: 50px 10% 20px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
