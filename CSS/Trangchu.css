@@ -19,34 +19,6 @@ main {
     border-right: 1px solid black;
 }
 
-.dropdown-menu {
-    display: none;
-    background-color: #444444 !important;
-}
-
-.border_dropdown {
-    border: 3px solid rgb(130, 130, 130) !important;
-    margin: -4px 4px;
-}
-
-.dropdown-menu a {
-    color: white !important;
-    padding-right: 30px;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-item {
-    color: white;
-}
-
-.dropdown-item:hover {
-    color: red !important;
-    background-color: #444444 !important;
-}
-
 .main_menu img {
     width: 140px;
     height: 90px;
@@ -78,6 +50,7 @@ main {
 .three_img {
     margin: 0 10%;
     display: flex;
+    justify-content: space-around;
 }
 
 .three_img img {
@@ -93,13 +66,16 @@ main {
     transform: scale(0.9);
 }
 
-.col_f img,
+.col_f img {
+    width: 300px;
+}
+
 .col_l img {
     width: 300px;
 }
 
 .col_m img {
-    width: 620px;
+    width: 600px;
 }
 
 .slideshow {
@@ -286,7 +262,7 @@ main {
 
 .event_img {
     height: 240px;
-    width: 150px;
+    width: 140px;
 }
 
 .container_event {
@@ -305,6 +281,7 @@ main {
 
 .event-select-carousel-track {
     display: flex;
+    align-items: center;
     transition: transform 0.5s ease-in-out;
 }
 

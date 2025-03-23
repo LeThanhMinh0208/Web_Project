@@ -1,0 +1,89 @@
+body {
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.background_red {
+    height: 460px;
+    width: 100vw;
+    background: url(../Image/ECGV1.png) no-repeat scroll center top transparent;
+    position: relative;
+    background-color: rgb(240, 77, 63)
+}
+
+.main {
+    height: 460px;
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.Icon_app {
+    position: absolute;
+    top: 300px;
+    right: 460px;
+    left: 0;
+    display: inline;
+}
+
+.background_yellow {
+    height: 460px;
+    width: 100vw;
+    background: url(../Image/ECGV2.png) no-repeat scroll center top transparent;
+    position: relative;
+    background-color: rgb(254, 205, 78);
+}
+
+.background_green {
+    height: 460px;
+    width: 100vw;
+    background: url(../Image/ECGV3.png) no-repeat scroll center top transparent;
+    position: relative;
+    background-color: rgb(168, 204, 106);
+}
+
+.background_blue {
+    height: 460px;
+    width: 100vw;
+    background: url(../Image/ECGV4.png) no-repeat scroll center top transparent;
+    position: relative;
+    background-color: rgb(132, 172, 218);
+}
+
+.cgv4_1,
+.cgv4_2,
+.cgv4_3 {
+    height: 118px;
+    width: 187px;
+}
+
+.cgv4_4 {
+    height: 119px;
+    width: 227px;
+}
+
+.cgv4_1 {
+    position: absolute;
+    top: 172px;
+    left: 327px;
+}
+
+.cgv4_2 {
+    position: absolute;
+    top: 268px;
+    left: 440px;
+}
+
+.cgv4_3 {
+    position: absolute;
+    top: 268px;
+    right: 146px;
+    z-index: 2;
+}
+
+.cgv4_4 {
+    position: absolute;
+    top: 170px;
+    right: 32px;
+    z-index: 1;
+}

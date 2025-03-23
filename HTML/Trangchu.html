@@ -65,8 +65,7 @@
                         <div class="border_dropdown">
                             <a class="dropdown-item" href="#">Quầy Online</a>
                             <a class="dropdown-item" href="#">Thuê Rạp & Vé Nhóm</a>
-                            <a class="dropdown-item" href="#">Thuê Rạp & Vé Nhóm</a>
-                            <a class="dropdown-item" href="#">E-CGV</a>
+                            <a class="dropdown-item" href="../HTML/E-CGV.html">E-CGV</a>
                             <a class="dropdown-item" href="#">CGV-EGif</a>
                             <a class="dropdown-item" href="#">CGV Rules</a>
                         </div>
@@ -401,7 +400,7 @@
                                     nextBtn.addEventListener("click", function() {
                                         if (currentIndex < totalItems - visibleItems) {
                                             currentIndex++;
-                                            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                                            track.style.transform = `translateX(-${currentIndex * itemWidth*1 }px)`;
                                         }
                                     });
 

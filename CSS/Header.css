@@ -3,7 +3,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(252, 252, 241);
+    background-color: rgb(252, 252, 242);
 }
 
 body {
@@ -105,4 +105,32 @@ header {
 .logo:hover {
     opacity: 50%;
     cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: #444444 !important;
+}
+
+.border_dropdown {
+    border: 3px solid rgb(130, 130, 130) !important;
+    margin: -4px 4px;
+}
+
+.dropdown-menu a {
+    color: white !important;
+    padding-right: 30px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    color: red !important;
+    background-color: #444444 !important;
 }
