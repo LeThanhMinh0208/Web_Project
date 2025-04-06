@@ -79,4 +79,5 @@ footer {
     background-image: url(../Image/footer_End.jpg);
     background-size: contain;
     height: 100px;
+    margin-top: 10px;
 }

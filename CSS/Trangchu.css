@@ -181,6 +181,7 @@ main {
 .select-carousel-item-custom {
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .select-carousel-item-custom:hover .select-overlay {

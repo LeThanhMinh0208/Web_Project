@@ -1,0 +1,78 @@
+main {
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+h1 {
+    font-weight: 450 !important;
+}
+
+.sub-category a {
+    color: #666;
+    padding-left: 15px;
+    font-size: 20px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.sub-category ul {
+    list-style-type: none;
+    text-align: end;
+}
+
+hr {
+    border: 2px solid black !important;
+    opacity: 1 !important;
+}
+
+.card {
+    background-color: rgb(252, 252, 242)!important;
+    border: none !important;
+    width: 210px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.muave {
+    text-align: end;
+    font-weight: bold;
+    padding: 8px 5px;
+    background-color: rgb(231, 26, 15);
+    border-radius: 5px;
+}
+
+.muave a {
+    color: white;
+    text-decoration: none;
+}
+
+.muave a:hover {
+    color: rgb(6, 237, 254);
+}
+
+.border-muave {
+    border: 1px solid #f07469;
+    padding: 3px;
+}
+
+.col-md-3 {
+    margin-bottom: 30px;
+    /* Khoảng cách giữa các hàng */
+    margin-right: 0px;
+    /* Khoảng cách giữa các cột */
+}
+
+.col-md-3:last-child {
+    margin-right: 0;
+    /* Không có khoảng cách bên phải cho cột cuối cùng */
+}
+
+.card-img-top {
+    border: 5px solid black;
+}
+
+.card:hover {
+    transform: scale(0.9);
+}

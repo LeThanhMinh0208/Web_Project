@@ -1,0 +1,17 @@
+.contents {
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.contents strong {
+    font-weight: 400;
+    font-size: 2.462em;
+    color: #000;
+    letter-spacing: -0.020em;
+    line-height: 1.444em;
+}
+
+.title_text {
+    color: rgb(166, 162, 162);
+}

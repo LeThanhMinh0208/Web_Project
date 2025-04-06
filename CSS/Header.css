@@ -3,7 +3,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(252, 252, 242);
+    background-color: rgb(252, 252, 242) !important;
 }
 
 body {
@@ -133,4 +133,28 @@ header {
 .dropdown-item:hover {
     color: red !important;
     background-color: #444444 !important;
+}
+
+.navbar_on_main p {
+    margin-top: 0;
+}
+
+.navbar_on_main a {
+    text-decoration: none;
+    color: gray;
+}
+
+.navbar_on_main {
+    background-color: rgb(240, 240, 230);
+    height: 25px;
+    padding-left: 15%;
+}
+
+.navbar_on_main p {
+    margin-top: 0;
+}
+
+.navbar_on_main a {
+    text-decoration: none;
+    color: gray;
 }
