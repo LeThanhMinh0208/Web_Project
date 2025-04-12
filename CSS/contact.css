@@ -191,5 +191,31 @@ body {
   .contact-form button:hover {
     background-color: #c5140d;
   }
+
+  .navbar_on_main {
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    background-color: #f9f7f1;
+    margin-left: 380px;
+  }
+  
+  .navbar_on_main p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    }
+  
+  .breadcrumb-icon,
+  .breadcrumb-arrow {
+    height: 18px;
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  .breadcrumb-current {
+    font-weight: bold;
+    text-decoration: underline;
+  }
   
   
