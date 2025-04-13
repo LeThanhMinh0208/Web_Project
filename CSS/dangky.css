@@ -1,0 +1,407 @@
+ /* -------------------------------
+           Phần CSS chỉ nằm trong main (không ảnh hưởng html, body)
+        ------------------------------- */
+ 
+ main {
+     background-image: url(../Image/Đăng_ký/anh2.jpg);
+     background-size: contain;
+     font-family: Arial, Helvetica, sans-serif;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 40px;
+ }
+ /* ==================== Container chính (trong main) ==================== */
+ 
+ .container {
+     background-color: #fff;
+     width: 70vw;
+     height: 100vh;
+     /* Bo góc toàn bộ container luôn là 20px */
+     border-radius: 20px;
+     box-shadow: none;
+     position: relative;
+     overflow: hidden;
+     margin-top: 20px;
+ }
+ /* ==================== Các style form đăng nhập & đăng ký ==================== */
+ 
+ .form-container {
+     position: absolute;
+     top: 0;
+     height: 100%;
+     transition: all 0.6s ease-in-out;
+ }
+ 
+ .sign-up-container {
+     left: 0;
+     width: 50%;
+     opacity: 0;
+     z-index: 1;
+ }
+ 
+ .sign-in-container {
+     left: 0;
+     width: 50%;
+     z-index: 2;
+ }
+ /* Sử dụng table layout cho form */
+ 
+ form {
+     background: rgb(252, 252, 242);
+     padding: 20px;
+     height: 100%;
+ }
+ 
+ form h1 {
+     text-align: center;
+     margin-bottom: 20px;
+     font-weight: bold;
+ }
+ 
+ form table {
+     width: 100%;
+     border-collapse: collapse;
+ }
+ 
+ form table tr {
+     border-bottom: 1px solid #eee;
+ }
+ 
+ form table td {
+     padding: 10px;
+     vertical-align: middle;
+ }
+ /* Ô chứa label */
+ 
+ form table td.label-cell {
+     text-align: right;
+     width: 35%;
+     font-weight: bold;
+     color: #333;
+     padding-right: 10px;
+ }
+ /* Ô chứa input/select */
+ 
+ form table td.input-cell {
+     text-align: left;
+     width: 65%;
+ }
+ /* Styling cho input & select */
+ 
+ form input,
+ form select {
+     width: 95%;
+     padding: 8px 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     background-color: #f7f7f7;
+     font-size: 14px;
+     transition: border-color 0.3s, box-shadow 0.3s;
+ }
+ 
+ form input:focus,
+ form select:focus {
+     border-color: #ff073a;
+     box-shadow: 0 0 5px rgba(255, 7, 58, 0.5);
+     outline: none;
+ }
+ /* =======================================================================
+           STYLE CHO NÚT Glowing Neon Button (sử dụng cho cả 2 form)
+           ======================================================================= */
+ 
+ form button.btn-neon {
+     margin-top: 20px;
+     display: inline-block;
+     position: relative;
+     padding: 12px 45px;
+     color: #ffffff;
+     text-transform: uppercase;
+     font-size: 14px;
+     font-weight: bold;
+     letter-spacing: 1px;
+     border-radius: 20px;
+     border: 2px solid #ff073a;
+     background-color: #800000;
+     cursor: pointer;
+     transition: 0.2s ease-in-out;
+     box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+     animation: neonPulse 1.5s ease-in-out infinite;
+ }
+ 
+ form button.btn-neon:hover {
+     box-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a, 0 0 40px #ff073a;
+ }
+ 
+ @keyframes neonPulse {
+     0%,
+     100% {
+         box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+     }
+     50% {
+         box-shadow: 0 0 15px #ff073a, 0 0 25px #ff073a, 0 0 35px #ff073a;
+     }
+ }
+ 
+ .social-container {
+     margin: 20px 0;
+     text-align: center;
+ }
+ 
+ .social-container a {
+     border: 1px solid #dddddd;
+     border-radius: 50%;
+     display: inline-block;
+     margin: 0 5px;
+     width: 40px;
+     height: 40px;
+ }
+ 
+ .social-container a img {
+     width: 100%;
+     height: auto;
+ }
+ /* ==================== OVERLAY (HIỆU ỨNG CHUYỂN ĐỔI) ==================== */
+ 
+ .overlay-container {
+     position: absolute;
+     top: 0;
+     left: 50%;
+     width: 50%;
+     height: 100%;
+     overflow: hidden;
+     transition: transform 0.6s ease-in-out;
+     z-index: 100;
+ }
+ 
+ .overlay {
+     background-image: url(../Image/Đăng_ký/anh2.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     color: #ffffff;
+     position: relative;
+     left: -100%;
+     height: 100%;
+     width: 200%;
+     transform: translateX(0);
+     transition: transform 0.6s ease-in-out;
+     /* Mặc định bo góc của overlay (trước khi active) */
+     border-top-right-radius: 20px;
+     border-bottom-right-radius: 20px;
+     border-top-left-radius: 0;
+     border-bottom-left-radius: 0;
+ }
+ 
+ .overlay-panel {
+     position: absolute;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     top: 0;
+     height: 100%;
+     width: 50%;
+     transform: translateX(0);
+     transition: transform 0.6s ease-in-out;
+     padding: 0 40px;
+ }
+ 
+ .overlay-left {
+     transform: translateX(-20%);
+     left: 0;
+ }
+ 
+ .overlay-right {
+     right: 0;
+     transform: translateX(0);
+ }
+ /* =================== Khi có class .right-panel-active =================== */
+ 
+ .container.right-panel-active .sign-in-container {
+     transform: translateX(100%);
+     opacity: 0;
+     z-index: 1;
+ }
+ 
+ .container.right-panel-active .sign-up-container {
+     transform: translateX(100%);
+     opacity: 1;
+     z-index: 5;
+ }
+ 
+ .container.right-panel-active .overlay-container {
+     transform: translateX(-100%);
+ }
+ 
+ .container.right-panel-active .overlay {
+     transform: translateX(50%);
+     /* Khi active, overlay di chuyển sang bên trái nên bo góc bên trái */
+     border-top-left-radius: 20px;
+     border-bottom-left-radius: 20px;
+     border-top-right-radius: 0;
+     border-bottom-right-radius: 0;
+ }
+ 
+ .container.right-panel-active .overlay-left {
+     transform: translateX(0);
+ }
+ 
+ .container.right-panel-active .overlay-right {
+     transform: translateX(20%);
+ }
+ 
+ .overlay::before {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background-color: rgba(0, 0, 0, 0.4);
+ }
+ 
+ .overlay-panel>* {
+     position: relative;
+ }
+ /* -------------------
+           Modal Success (Thông báo đăng ký/đăng nhập thành công)
+        ------------------- */
+ 
+ #modalSuccess {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: rgba(0, 0, 0, 0.8);
+     color: #fff;
+     padding: 30px 40px;
+     border-radius: 10px;
+     text-align: center;
+     font-size: 18px;
+     z-index: 10000;
+     display: none;
+ }
+ /* -------------------
+           Canvas Fireworks (Hiệu ứng pháo hoa)
+        ------------------- */
+ 
+ #fireworksCanvas {
+     position: fixed;
+     top: 0;
+     left: 0;
+     pointer-events: none;
+     z-index: 9999;
+     display: none;
+ }
+ /* -------------------
+           Class btn-neon-red (nút trên overlay)
+        ------------------- */
+ 
+ .btn-neon-red {
+     background: transparent;
+     border: 2px solid #FF0000;
+     color: #FF0000;
+     padding: 12px 24px;
+     border-radius: 5px;
+     font-weight: bold;
+     text-transform: uppercase;
+     cursor: pointer;
+     box-shadow: 0 0 5px #FF0000, 0 0 10px #FF0000;
+     transition: box-shadow 0.3s ease-in-out;
+ }
+ 
+ .btn-neon-red:hover {
+     box-shadow: 0 0 5px #FF0000, 0 0 25px #FF0000, 0 0 50px #FF0000, 0 0 100px #FF0000;
+ }
+ 
+ .img-logo {
+     width: 35px;
+     height: fit-content;
+ }
+ 
+ .btn-neon-red {
+     /* Các thuộc tính cơ bản */
+     background: transparent;
+     border: 2px solid #FF0000;
+     /* Đường viền đỏ đậm */
+     color: #FF0000;
+     /* Màu chữ đỏ */
+     padding: 12px 24px;
+     border-radius: 5px;
+     font-weight: bold;
+     text-transform: uppercase;
+     cursor: pointer;
+     /* Hiệu ứng neon glow mặc định */
+     box-shadow: 0 0 5px #FF0000, 0 0 10px #FF0000;
+     transition: box-shadow 0.3s ease-in-out;
+ }
+ 
+ .btn-neon-red:hover {
+     /* Khi hover, hiệu ứng neon mạnh hơn */
+     box-shadow: 0 0 5px #FF0000, 0 0 25px #FF0000, 0 0 50px #FF0000, 0 0 100px #FF0000;
+ }
+ 
+ .neon-button {
+     position: relative;
+     display: inline-block;
+     padding: 15px 30px;
+     font-size: 18px;
+     font-family: sans-serif;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     text-decoration: none;
+     color: red;
+     /* Viền neon đỏ */
+     overflow: hidden;
+     transition: 0.3s;
+ }
+ /* Pseudo-element ::before dùng để tạo tia neon chạy ngang */
+ 
+ .neon-button::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: -300px;
+     /* Bắt đầu từ bên ngoài nút */
+     width: 300px;
+     /* Độ dài tia neon */
+     height: 3px;
+     background: linear-gradient(90deg, transparent, #ff073a, transparent);
+     filter: drop-shadow(0 0 20px #ff073a);
+     animation: neonDash 2s linear infinite;
+ }
+ /* Pseudo-element ::after dùng để tạo tia neon chạy dọc (cạnh bên phải) */
+ 
+ .neon-button::after {
+     content: "";
+     position: absolute;
+     top: -300px;
+     /* Bắt đầu từ trên ngoài nút */
+     right: 0;
+     width: 3px;
+     height: 300px;
+     /* Độ dài tia neon */
+     background: linear-gradient(180deg, transparent, #ff073a, transparent);
+     filter: drop-shadow(0 0 10px #ff073a);
+     animation: neonDashVertical 2s linear infinite;
+ }
+ /* Keyframes cho tia neon chạy ngang */
+ 
+ @keyframes neonDash {
+     0% {
+         left: -300px;
+     }
+     100% {
+         left: 100%;
+     }
+ }
+ /* Keyframes cho tia neon chạy dọc */
+ 
+ @keyframes neonDashVertical {
+     0% {
+         top: -300px;
+     }
+     100% {
+         top: 100%;
+     }
+ }
