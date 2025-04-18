@@ -156,6 +156,7 @@ main {
 }
 
 .select-overlay {
+    position: relative;
     position: absolute;
     top: 0;
     left: 0;
@@ -166,12 +167,29 @@ main {
     justify-content: center;
     align-items: center;
     margin-left: 10px;
+    height: 450px;
+    width: 305px;
 }
 
-.select-overlay img {
-    width: 300px;
-    height: 450px;
-    margin-left: 1px;
+.select-overlay .muave {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}
+
+.select-overlay .play {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    top: 120px;
+    left: 110px;
+}
+
+.select-overlay .xemchitiet {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
     cursor: pointer;
 }
 
@@ -181,7 +199,6 @@ main {
 .select-carousel-item-custom {
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease;
 }
 
 .select-carousel-item-custom:hover .select-overlay {
@@ -330,4 +347,21 @@ main {
 .event-select_next {
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
+}
+
+.muave {
+    text-align: end;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: rgb(199, 63, 32);
+    border-radius: 5px;
+}
+
+.muave a {
+    color: white;
+    text-decoration: none;
+}
+
+.muave a:hover {
+    color: white;
 }
