@@ -1,0 +1,70 @@
+.card-section {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.section-title h6 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.section-title button {
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gift-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gift-card img {
+    width: 100%;
+    display: block;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gift-card:hover img {
+    transform: scale(1.05);
+}
+
+.top-banner {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.top-banner h5 {
+    margin-bottom: 10px;
+}
+
+.top-banner button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
