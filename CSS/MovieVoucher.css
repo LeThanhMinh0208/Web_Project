@@ -3,17 +3,33 @@
     display: block;
     width: 130px;
     height: 20px;
-    padding-top: 100px;
-    background: url('https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/icon-cate-voucher.png');
+    padding-top: 120px;
+    padding-bottom: 30px;
+    background: url('../Image/Voucher/icon-cate-voucher.png');
     /* color: #222222; */
-    font-size: 12px;
+    font-size: 16px;
     text-align: center;
     /* filter: grayscale(100%); */
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none; 
+    color: black;
+
 }
+
+.movie-voucher {
+    margin-top: 20px; /* khoảng trống bên ngoài khung */
+    background-position: 0px 20px !important; /* đẩy hình nền xuống */
+}
+
+
 
 .voucher-img {
     width: 100%;
     height: 100%
+}
+
+.CGV_VN li a{
+    text-decoration: none;
+    color: rgb(118, 118, 126);
 }
