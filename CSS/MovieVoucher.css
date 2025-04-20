@@ -1,0 +1,19 @@
+.movie-voucher {
+    background-position: 0px 0px !important;
+    display: block;
+    width: 130px;
+    height: 20px;
+    padding-top: 100px;
+    background: url('https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/icon-cate-voucher.png');
+    /* color: #222222; */
+    font-size: 12px;
+    text-align: center;
+    /* filter: grayscale(100%); */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.voucher-img {
+    width: 100%;
+    height: 100%
+}
