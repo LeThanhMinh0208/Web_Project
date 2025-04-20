@@ -365,3 +365,34 @@ main {
 .muave a:hover {
     color: white;
 }
+
+/* hai thanh quảng cáo */
+.cms-index-index .mtw_banner_left {
+    left: 10px;
+    position: fixed;
+    z-index: 20;
+    top: 20px;
+    display: block;
+}
+
+.mtw_banner_left {
+    left: 10px;
+    position: fixed;
+    z-index: 20;
+    top: 20px;
+}
+
+.cms-index-index .mtw_banner_right {
+    position: fixed;
+    right: 10px;
+    z-index: 20;
+    top: 20px;
+    display: block;
+}
+
+.mtw_banner_right {
+    position: fixed;
+    right: 10px;
+    z-index: 20;
+    top: 20px;
+}
