@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mua Ve</title>
+
+    <link rel="stylesheet" href="../CSS/Header.css">
+    <link rel="stylesheet" href="../CSS/Footer.css">
+    <link rel="stylesheet" href="../Bootstrap/bootstrap.css">
+    <script src="../Bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../Jquery/jquery-3.7.1.min.js"></script>
+    <script src="../JS/MuaVe.js"></script>
+    <style>
+        body {
+            background: #fbfcf5;
+        }
+        
+        .seat-wrapper {
+            display: inline-block;
+            padding: 15px;
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        }
+        
+        .row-label {
+            width: 28px;
+            display: inline-block;
+            text-align: right;
+            margin-right: 2px;
+            font-weight: bold;
+        }
+        
+        .seat {
+            width: 28px;
+            height: 28px;
+            margin: 2px;
+            border: 1px solid #999;
+            cursor: pointer;
+            font-size: 10px;
+            line-height: 26px;
+            text-align: center;
+            border-radius: 3px;
+            user-select: none;
+        }
+        
+        .seat.normal {
+            background: #e8ffe8;
+        }
+        
+        .seat.vip {
+            background: #fff0e5;
+        }
+        
+        .seat.sweetbox {
+            background: #ff9cd5;
+        }
+        
+        .seat.booked {
+            background: #b5b5b5;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+        
+        .seat.selected {
+            background: #8d0e03;
+            color: #fff;
+        }
+        /* ===== Legend ===== */
+        
+        .legend .box {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: middle;
+            border: 1px solid #999;
+            border-radius: 3px;
+        }
+        
+        .legend li {
+            margin-bottom: 4px;
+            list-style: none;
+        }
+        /* ====== MOVIE BUTTON ====== */
+        
+        .movie-btn {
+            padding: 0;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            width: 130px;
+            /* size nút */
+            overflow: hidden;
+            transition: transform .2s, border-color .2s;
+            text-align: center;
+            cursor: pointer;
+            background-color: #ffffff;
+        }
+        
+        .movie-btn img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .movie-title {
+            display: block;
+            padding: 4px 6px 6px;
+            font-size: .8rem;
+            font-weight: 600;
+            color: #212529;
+            line-height: 1.2;
+        }
+        /* khi radio được chọn */
+        
+        .btn-check:checked+.movie-btn {
+            border-color: #0d6efd;
+            /* màu primary */
+            box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+            transform: scale(1.04);
+        }
+        /* hover nhẹ */
+        
+        .movie-btn:hover {
+            transform: scale(1.02);
+        }
+        
+        .movie-btn {
+            margin: 0 40px;
+        }
+        
+        .combo-img {
+            height: 80px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="banner">
+
+            <a href="../HTML/banner.html"><img src="../Image/banner_header.jpg" alt=""></a>
+
+        </div>
+        <div class="sign_up_in">
+            <ul>
+                <li><img src="../Image/icon_promotion25.png" alt=""><a href="../HTML/news_offers.html"> TIN TỨC & ƯU ĐÃI</a></li>
+                <li><img src="../Image/icon_ticket25.png" alt=""><a href="../HTML/VeCuaToi.html"> VÉ CỦA TÔI</a></li>
+                <li><img src="../Image/icon_login25.png" alt=""><a href="../HTML/dangky.html"> ĐĂNG NHẬP/ ĐĂNG KÝ</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <ul>
+                <a href="../HTML/Trangchu.html"><img class="logo" src="../Image/CGV_Logo.png" alt=""></a>
+                <li class="dropdown">
+                    <a href="#">PHIM</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="border_dropdown">
+                            <a class="dropdown-item" href="../HTML/phimdangchieu.html">Phim Đang Chiếu</a>
+                            <a class="dropdown-item" href="../HTML/phimsapchieu.html">Phim Sắp Chiếu</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">RẠP CGV</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="border_dropdown">
+                            <a class="dropdown-item" href="../HTML/RapCGV.html">Tất Cả Các Rạp</a>
+                            <a class="dropdown-item" href="#">Rạp Đặc Biệt</a>
+                            <a class="dropdown-item" href="#">Rạp 3D</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">THÀNH VIÊN</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="border_dropdown">
+                            <a class="dropdown-item" href="../HTML/dangky.html">Tài Khoản CGV</a>
+                            <a class="dropdown-item" href="#">Quyền Lợi</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">CULTUREPLEX</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="border_dropdown">
+                            <a class="dropdown-item" href="../HTML/MovieVoucher.html">Quầy Online</a>
+                            <a class="dropdown-item" href="../HTML/ThueRapVeNhom.html">Thuê Rạp & Vé Nhóm</a>
+                            <a class="dropdown-item" href="../HTML/E-CGV.html">E-CGV</a>
+                            <a class="dropdown-item" href="../HTML/CGV-Egifts.html">CGV-EGif</a>
+                            <a class="dropdown-item" href="../HTML/CGV-Rules.html">CGV Rules</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <a class="Muavengay" href="../HTML/MuaVe.html"><img src="../Image/mua-ve_ngay.png" alt=""></a>
+        </div>
+    </header>
+    <main>
+
+
+
+        <body>
+            <div class="container-lg">
+                <h4 class="text-center mb-3">1. Chọn phim</h4>
+                <div class="d-flex flex-wrap justify-content-center gap-3" id="movieList">
+
+                    <!-- PHIM 1 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv1" autocomplete="off" data-name="Qủy Nhập Tràng">
+                    <label class="btn movie-btn" for="mv1">
+                  <img src="../Image/pdc1.jpg" alt="Qủy Nhập Tràng">
+                  <span class="movie-title">QỦY NHẬP TRÀNG</span>
+              </label>
+
+                    <!-- PHIM 2 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv2" autocomplete="off" data-name="Địa Đạo">
+                    <label class="btn movie-btn" for="mv2">
+                  <img src="../Image/psc10.jpg" alt="Địa Đạo">
+                  <span class="movie-title">ĐỊA ĐẠO</span>
+              </label>
+
+                    <!-- PHIM 3 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv3" autocomplete="off" data-name="Mickey 17">
+                    <label class="btn movie-btn" for="mv3">
+                  <img src="../Image/pdc12.jpg" alt="Mickey 17">
+                  <span class="movie-title">MICKEY 17</span>
+              </label>
+
+                    <!-- PHIM 4 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv4" autocomplete="off" data-name="Âm Dương Lộ">
+                    <label class="btn movie-btn" for="mv4">
+                  <img src="../Image/psc3.jpg" alt="Âm Dương Lộ">
+                  <span class="movie-title">ÂM DƯƠNG LỘ</span>
+              </label>
+
+                    <!-- PHIM 5 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv5" autocomplete="off" data-name="Interstellar">
+                    <label class="btn movie-btn" for="mv5">
+                  <img src="../Image/pdc6.jpg" alt="Interstellar">
+                  <span class="movie-title">INTERSTELLAR</span>
+              </label>
+
+                    <!-- PHIM 6 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv6" autocomplete="off" data-name="Anh Không Đau">
+                    <label class="btn movie-btn" for="mv6">
+                  <img src="../Image/pdc8.jpg" alt="Anh Không Đau">
+                  <span class="movie-title">ANH KHÔNG ĐAU</span>
+              </label>
+
+                    <!-- PHIM 7 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv7" autocomplete="off" data-name="Nhà Gia Tiên">
+                    <label class="btn movie-btn" for="mv7">
+                  <img src="../Image/pdc11.jpg" alt="Nhà Gia Tiên">
+                  <span class="movie-title">NHÀ GIA TIÊN</span>
+              </label>
+
+                    <!-- PHIM 8 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv8" autocomplete="off" data-name="Nụ Hôn Bạc Tỷ">
+                    <label class="btn movie-btn" for="mv8">
+                  <img src="../Image/pdc14.jpg" alt="Nụ Hôn Bạc Tỷ">
+                  <span class="movie-title">NỤ HÔN BẠC TỶ</span>
+              </label>
+
+                    <!-- PHIM 9 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv9" autocomplete="off" data-name="Bộ Tứ Báo Thủ">
+                    <label class="btn movie-btn" for="mv9">
+                  <img src="../Image/pdc15.jpg" alt="Bộ Tứ Báo Thủ">
+                  <span class="movie-title">BỘ TỨ BÁO THỦ</span>
+              </label>
+
+                    <!-- PHIM 10 -->
+                    <input type="radio" class="btn-check movie-radio" name="movie" id="mv10" autocomplete="off" data-name="Captain America">
+                    <label class="btn movie-btn" for="mv10">
+                  <img src="../Image/pdc16.jpg" alt="Captain America">
+                  <span class="movie-title">CAPTAIN AMERICA</span>
+              </label>
+
+                </div>
+
+
+                <!-- STEP 2 : CITY -->
+                <div id="citySection" class="mb-4 d-none">
+                    <label class="form-label fw-bold">2. Chọn tỉnh thành:</label>
+                    <select id="citySelect" class="form-select w-auto d-inline-block">
+                    <option value="" selected disabled>- Chọn -</option>
+                    <option>Hà Nội</option>
+                    <option>TP Hồ Chí Minh</option>
+                    <option>Đà Nẵng</option>
+                    <option>Hải Phòng</option>
+                    <option>Cần Thơ</option>
+                    <option>Bình Dương</option>
+                    <option>Khánh Hòa</option>
+                    <option>Bà Rịa – Vũng Tàu</option>
+                    <option>Quảng Ninh</option>
+                    <option>Thừa Thiên Huế</option>
+                </select>
+                </div>
+
+                <!-- STEP 3 : DATE -->
+                <div id="dateSection" class="mb-4 d-none">
+                    <label class="form-label fw-bold">3. Chọn ngày xem:</label>
+                    <input id="dateInput" type="date" class="form-control w-auto d-inline-block" />
+                </div>
+
+                <!-- STEP 4 : CINEMA -->
+                <div id="cinemaSection" class="mb-4 d-none">
+                    <label class="form-label fw-bold">4. Chọn rạp:</label>
+                    <select id="cinemaSelect" class="form-select w-auto d-inline-block">
+                    <option value="" selected disabled>- Chọn -</option>
+                    <!-- sẽ đổ động bằng js  -->
+                </select>
+                </div>
+
+                <!-- STEP 5 : SHOWTIME -->
+                <div id="showtimeSection" class="mb-4 d-none">
+                    <label class="form-label fw-bold">5. Chọn suất chiếu (9h – 24h):</label>
+                    <div id="showtimeButtons" class="d-flex flex-wrap gap-2 mt-2"></div>
+                </div>
+
+                <!-- STEP 6 : SEATS -->
+                <div id="seatSection" class="mb-4 d-none">
+                    <label class="form-label fw-bold">6. Chọn ghế (100K/ghế):</label>
+                    <div class="seat-wrapper mb-3" id="seatMap"></div>
+                    <ul class="legend ps-0">
+                        <li><span class="box" style="background:#8d0e03"></span> Đang chọn</li>
+                        <li><span class="box" style="background:#b5b5b5"></span> Đã Đặt</li>
+                        <li><span class="box" style="background:#e8ffe8"></span> Thường</li>
+                        <li><span class="box" style="background:#fff0e5"></span> VIP</li>
+                        <li><span class="box" style="background:#ff9cd5"></span> Sweetbox</li>
+                    </ul>
+                </div>
+
+                <!-- STEP 7 : COMBO -->
+                <div id="comboSection" class="mb-4 d-none">
+                    <label class="form-label fw-bold">7. Chọn combo bắp + nước (80K/combo):</label>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <!-- tạo 5 combo -->
+                        <script>
+                            /* ----- cấu hình combo: tiêu đề + đường dẫn ảnh ----- */
+                            const combos = [{
+                                title: "1 Bắp Ngọt Lớn + 1 Nước Siêu Lớn",
+                                img: "../Image/combo4.png"
+                            }, {
+                                title: "1 Bắp Ngọt Lớn + 2 Nước Siêu Lớn + 1 Snack",
+                                img: "../Image/combo2.png"
+                            }, {
+                                title: "03 ly thiết kế nhân vật GARFIELD BEST BUDS 2025 + 02 Nước ngọt siêu lớn Thêm 01 Bắp",
+                                img: "../Image/combo3.png"
+                            }, {
+                                title: "1 Bắp Ngọt Lớn + 2 Nước Siêu Lớn",
+                                img: "../Image/combo1.png"
+                            }, {
+                                title: "03 ly thiết kế nhân vật Snake Mini Brown & Friend <br> Có ngay: 01 Bắp mix hai vị và 02 Nước ngọt siêu lớn, kèm 01 snack",
+                                img: "../Image/combo5.png"
+                            }];
+
+                            /* ----- sinh HTML ----- */
+                            const comboHTML = combos.map((c, i) => `
+                          <div class="col">
+                            <div class="card h-100">
+                              <img src="${c.img}" class="card-img-top compo-img" alt="${c.title}">
+                              <div class="card-body">
+                                <h6 class="card-title">${c.title}</h6>
+                                <div class="input-group input-group-sm">
+                                  <span class="input-group-text">Số lượng</span>
+                                  <input type="number" class="form-control combo-qty" min="0" value="0" data-id="${i}">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        `).join("");
+
+                            document.write(comboHTML);
+                        </script>
+
+                    </div>
+                </div>
+
+                <!-- SUMMARY & CONFIRM -->
+                <div id="summarySection" class="mb-4 d-none">
+                    <h5>Tổng tiền: <span id="totalDisplay" class="text-danger fw-bold">0</span> đ</h5>
+                    <button id="confirmBtn" class="btn btn-success mt-2">Xác nhận đặt vé</button>
+                </div>
+            </div>
+
+            <script>
+                function gatherBookingData() {
+                    return {
+                        movie: $('input[name="movie"]:checked').data('name'),
+                        city: $('#citySelect').val(),
+                        date: $('#dateInput').val(),
+                        cinema: $('#cinemaSelect').val(),
+                        showtime: $('.showtime.active').data('time') + ':00',
+                        seats: [...selectedSeats], // copy
+                        combos: $('.combo-qty').map(function() {
+                            return {
+                                id: $(this).data('id'),
+                                qty: +$(this).val()
+                            };
+                        }).get().filter(c => c.qty > 0),
+                        total: $('#totalDisplay').text()
+                    };
+                }
+
+                const seatPrice = 100000;
+                const comboPrice = 80000;
+                const showtimes = [...Array(16)].map((_, i) => 9 + i); // 9-24 h
+                const cinemasByCity = [
+                    'CGV Vincom', 'CGV Crescent Mall', 'CGV Aeon Mall',
+                    'CGV VivoCity', 'CGV Pearl Plaza'
+                ];
+                let selectedSeats = [],
+                    bookedSeats = ['A10', 'B10', 'C10', 'D10', 'E10'];
+
+
+                /* ========== HELPERS ========== */
+                const moneyFmt = n => n.toLocaleString('vi-VN');
+
+                function updateTotal() {
+                    const seatTotal = selectedSeats.length * seatPrice;
+                    let comboTotal = 0;
+                    $('.combo-qty').each(function() {
+                        comboTotal += +$(this).val() * comboPrice
+                    });
+                    $('#totalDisplay').text(moneyFmt(seatTotal + comboTotal));
+                }
+
+                /* =====================================================
+                   1. CHỌN PHIM  →  mở bước 2 (Tỉnh)
+                   ===================================================== */
+                $(document).on('change', '.movie-radio', function() {
+                    $('#citySection').removeClass('d-none');
+
+                    // reset toàn bộ bước sau nếu đổi phim
+                    $('#citySelect').val('');
+                    $('#dateInput').val('');
+                    $('#cinemaSelect').html('<option value="" disabled selected>- Chọn -</option>');
+                    $('#showtimeButtons').empty();
+                    $('#seatMap').empty();
+                    $('.combo-qty').val(0);
+                    selectedSeats = [];
+                    updateTotal();
+                    $('#dateSection, #cinemaSection, #showtimeSection, #seatSection,\
+                 #comboSection, #summarySection').addClass('d-none');
+                });
+
+                /* =====================================================
+                   2. CHỌN TỈNH  →  mở bước 3 (Ngày)
+                   ===================================================== */
+                $('#citySelect').on('change', function() {
+                    $('#dateSection').removeClass('d-none');
+                    $('#dateInput').val('');
+                    $('#cinemaSection, #showtimeSection, #seatSection,\
+                 #comboSection, #summarySection').addClass('d-none');
+                });
+
+                /* =====================================================
+                   3. CHỌN NGÀY  →  mở bước 4 (Rạp)
+                   ===================================================== */
+                $('#dateInput').on('change', function() {
+                    if (!this.value) return;
+                    $('#cinemaSelect').html(
+                        '<option value="" disabled selected>- Chọn -</option>' +
+                        cinemasByCity.map(c => `<option>${c}</option>`).join('')
+                    );
+                    $('#cinemaSection').removeClass('d-none');
+                    $('#showtimeSection, #seatSection, #comboSection, #summarySection').addClass('d-none');
+                });
+
+                /* =====================================================
+                   4. CHỌN RẠP  →  mở bước 5 (Suất)
+                   ===================================================== */
+                $('#cinemaSelect').on('change', function() {
+                    $('#showtimeButtons').html(
+                        showtimes.map(h => `<button class="btn btn-outline-primary btn-sm showtime" data-time="${h}">${h}:00</button>`).join(' ')
+                    );
+                    $('#showtimeSection').removeClass('d-none');
+                    $('#seatSection, #comboSection, #summarySection').addClass('d-none');
+                });
+
+                /* =====================================================
+                   5. CHỌN SUẤT  →  mở bước 6 (Ghế)
+                   ===================================================== */
+                $(document).on('click', '.showtime', function() {
+                    $('.showtime').removeClass('active');
+                    $(this).addClass('active');
+                    $('#seatSection').removeClass('d-none'); // <- hiển trước
+                    buildSeatMap(); // <- rồi mới tạo ghế
+                });
+
+                /* ========== GHẾ, COMBO, CONFIRM – GIỮ MÃ GỐC ========== */
+                function buildSeatMap() {
+                    const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+                    const $map = $('#seatMap').empty();
+                    rows.forEach((r, idx) => {
+                        const rowDiv = $('<div class="d-flex align-items-center"></div>');
+                        rowDiv.append(`<span class="row-label">${r}</span>`);
+                        for (let c = 1; c <= 10; c++) {
+                            const id = r + c;
+                            const seatCls = ['seat'];
+                            // categories: rows A-C = normal, D-F = vip, G = normal, H = sweetbox
+                            if (['A', 'B', 'C', 'G'].includes(r)) seatCls.push('normal');
+                            else if (['D', 'E', 'F'].includes(r)) seatCls.push('vip');
+                            else if (r === 'H') seatCls.push('sweetbox');
+                            if (bookedSeats.includes(id)) seatCls.push('booked');
+                            const seat = $(`<div class="${seatCls.join(' ')}" data-id="${id}">${id}</div>`);
+                            rowDiv.append(seat);
+                        }
+                        $map.append(rowDiv);
+                    });
+                    // reset selections
+                    selectedSeats = [];
+                    updateTotal();
+                }
+
+                // seat click
+                $(document).on('click', '.seat', function() {
+                    if ($(this).hasClass('booked')) return;
+                    const id = $(this).data('id');
+                    $(this).toggleClass('selected');
+                    if ($(this).hasClass('selected')) selectedSeats.push(id);
+                    else selectedSeats = selectedSeats.filter(s => s !== id);
+                    updateTotal();
+                    if (selectedSeats.length > 0) {
+                        $('#comboSection').removeClass('d-none');
+                        $('#summarySection').removeClass('d-none');
+                    }
+                });
+
+                // combo qty change
+                $(document).on('input', '.combo-qty', updateTotal);
+
+                // confirm booking
+                $('#confirmBtn').on('click', () => {
+                    if (!selectedSeats.length) {
+                        alert('Vui lòng chọn ghế!');
+                        return;
+                    }
+
+                    // --- Lưu vào localStorage ---
+                    const newTicket = gatherBookingData();
+                    const ticketList = JSON.parse(localStorage.getItem('tickets') || '[]');
+                    ticketList.push(newTicket);
+                    localStorage.setItem('tickets', JSON.stringify(ticketList));
+
+                    alert(' VÉ THÀNH CÔNG !!!\n KIỂM TRA VÉ Ở “Vé Của Tôi”.')
+
+                });
+            </script>
+
+    </main>
+    <footer>
+        <div class="footer_logo">
+            <a target="_blank" href="">
+                <img src="../Image/4dx.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/imax.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/Starium.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/GoldClass.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/Lamour.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/Sweetbox.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/Pre.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/ScreenX.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/Cine.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/Cine_Live.png" alt="">
+            </a>
+            <a target="_blank" href="">
+                <img src="../Image/Cine_Suite.png" alt="">
+            </a>
+        </div>
+        <div class="footer_connect">
+            <div class="CGV_VN">
+                <span>CGV Việt Nam</span>
+                <ul>
+                    <li>Giới Thiệu</li>
+                    <li>Tiện Ích Online</li>
+                    <li>Thẻ Quà Tặng</li>
+                    <li>Tuyển Dụng</li>
+                    <li>Liên Hệ Quảng Cáo CGV</li>
+                    <li>Dành Cho Đối Tác</li>
+                </ul>
+            </div>
+            <div class="Dieukhoan">
+                <span>Điều khoản sử dụng</span>
+                <ul>
+                    <li>Điều Khoản Chung</li>
+                    <li>Điều Khoản Giao Dịch</li>
+                    <li>Chính Sách Thanh Toán</li>
+                    <li>Chính Sách Bảo Mật</li>
+                    <li>Câu Hỏi Thường Gặp</li>
+                </ul>
+            </div>
+            <div class="Ketnoi">
+                <span>Kết nối với chúng tôi</span>
+                <div class="logo_MXH">
+                    <a target="_blank" href="https://www.facebook.com/cgvcinemavietnam"><img src="../Image/facebook.png" alt=""></a>
+                    <a target="_blank" href="https://www.youtube.com/cgvvietnam"><img src="../Image/Youtube.jfif" alt=""></a>
+                    <a target="_blank" href="https://www.instagram.com/cgvcinemasvietnam"><img src="../Image/Instagram.jfif" alt=""></a>
+                    <a target="_blank" href="https://id.zalo.me/account?continue=http%3A%2F%2Fzalo%2Eme%2F1884424922722396289"><img src="../Image/zalo.png" alt=""></a>
+                </div>
+                <a target="_blank" href="http://online.gov.vn/Website/chi-tiet-30270">
+                    <img class="Bo_Cong_Thuong" src="../Image/Bocongthuong.png" alt="">
+                </a>
+            </div>
+            <div class="CSKH">
+                <span>Chăm sóc khách hàng</span>
+                <ul>
+                    <li>Hotline: 1900 6017</li>
+                    <li>Giờ làm việc: 8:00 - 22:00 <br>(Tất cả các ngày bao gồm cả Lễ Tết)</li>
+                    <li>Email hỗ trợ: hoidap@cgv.vn</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer_company">
+            <img src="../Image/CJ_CGV.png" alt="">
+            <ul>
+                <span style="font-weight: bold;">CÔNG TY TNHH CJ CGV VIỆT NAM</span>
+                <li>Giấy Chứng nhận đăng ký doanh nghiệp: 0303675393 đăng ký lần đầu ngày 31/7/2008, được cấp bởi Sở Kế hoạch và<br>Đầu tư Thành phố Hồ Chí Minh</li>
+                <li>Địa chỉ: Lầu 2, số 7/28, Đường Thành Thái, Phường 14, Quận 10, Thành phố Hồ Chí Minh, Việt Nam</li>
+                <li>Đường dây nóng (Hotline): 1900 6017</li>
+                <li>COPYRIGHT 2017 CJ CGV VIETNAM CO., LTD. ALL RIGHTS RESERVED</li>
+            </ul>
+        </div>
+        <br>
+        <div class="footer_background_end"></div>
+
+    </footer>
+    </body>
+
+</html>
