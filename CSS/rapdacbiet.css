@@ -1,10 +1,23 @@
-.contents {
+.specialtheater_category_title_wrap .specialtheater_category_title {
+    padding: 0 0 0 9px;
+    font-weight: 600;
+    font-size: 2.154em;
+    color: #000;
+    line-height: 1.500em;
+    white-space: nowrap;
+}
+
+.specialtheater_title {
+    text-align: center;
+}
+
+.specialtheater_title .contents {
     width: 980px;
     height: 100%;
     margin: 0 auto;
 }
 
-.contents strong {
+.specialtheater_title strong {
     font-weight: 400;
     font-size: 2.462em;
     color: #000;
@@ -12,6 +25,80 @@
     line-height: 1.444em;
 }
 
-.title_text {
-    color: rgb(166, 162, 162);
+.specialtheater_title .specialtheater_hash_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+}
+
+.specialtheater_title .specialtheater_hash_list li {
+    font-weight: 600;
+    font-size: 1.615em;
+    color: #999;
+    line-height: 2.462em;
+}
+
+.technology-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: 314px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.technology-card:hover {
+    transform: scale(1.05);
+}
+
+.technology-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: fill;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.technology-card:hover img {
+    opacity: 0.8;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.card-description {
+    font-size: 0.9em;
+}
+
+.subtitle {
+    display: inline-flex;
+    position: relative;
+    margin-left: 24px;
+    padding-left: 24px;
+    font-weight: 400;
+    font-size: 1.231em;
+    color: #666;
+}
+
+.CGV_VN li a{
+    text-decoration: none;
+    color: #666;
 }

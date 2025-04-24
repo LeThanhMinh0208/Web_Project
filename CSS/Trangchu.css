@@ -396,3 +396,8 @@ main {
     z-index: 20;
     top: 20px;
 }
+
+.CGV_VN li a{
+    text-decoration: none;
+    color: #666;
+}
