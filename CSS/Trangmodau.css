@@ -1,0 +1,82 @@
+:root {
+    --c1: #ff512f;
+    --c2: #dd2476;
+    --c3: #00b4db;
+    --c4: #2193b0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    color: #fff
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--c1), var(--c2), var(--c3), var(--c4));
+    background-size: 300% 300%;
+    animation: bgShift 15s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+    0% {
+        background-position: 0 0
+    }
+    50% {
+        background-position: 100% 100%
+    }
+    100% {
+        background-position: 0 0
+    }
+}
+
+#intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .55)
+}
+
+#logo {
+    width: 260px;
+    max-width: 70vw;
+    filter: drop-shadow(0 0 7px #fff) drop-shadow(0 0 22px var(--c2));
+}
+
+h1 {
+    margin-top: 1rem;
+    font-weight: 600
+}
+
+h1 span {
+    color: #fff
+}
+
+#enterBtn {
+    padding: .75rem 2.5rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--c1), var(--c2));
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3), 0 0 22px var(--c2);
+    transition: transform .2s, box-shadow .2s
+}
+
+#enterBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .4), 0 0 30px var(--c3)
+}
