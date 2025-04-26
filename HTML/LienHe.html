@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Liên Hệ</title>
   <link rel="shortcut icon" href="../Image/icon_Trang/cgvcinemas-vietnam-favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="../CSS/contact.css" />
-  <link rel="stylesheet" href="../CSS/Header.css" />
-  <link rel="stylesheet" href="../CSS/Footer.css" />
+  <link rel="stylesheet" href="../CSS/contact.css"/>
+  <link rel="stylesheet" href="../CSS/Header.css"/>
+  <link rel="stylesheet" href="../CSS/Footer.css"/>
   <link rel="stylesheet" href="../Bootstrap/bootstrap.min.css">
   <style>
     .CGV_VN li a{
@@ -16,6 +16,15 @@
       color: #666;
     }
   </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Liên Hệ</title>
+    <link rel="shortcut icon" href="../Image/icon_Trang/cgvcinemas-vietnam-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/contact.css"/>
+    <link rel="stylesheet" href="../CSS/Header.css"/>
+    <link rel="stylesheet" href="../CSS/Footer.css"/>
+    <link rel="stylesheet" href="../Bootstrap/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -30,7 +39,7 @@
         <li><img src="../Image/icon_promotion25.png" alt=""><a href="../HTML/news_offers.html"> TIN TỨC & ƯU ĐÃI</a>
         </li>
         <li><img src="../Image/icon_ticket25.png" alt=""><a href=""> VÉ CỦA TÔI</a></li>
-        <li><img src="../Image/icon_login25.png" alt=""><a href="../HTML/dangky.html"> ĐĂNG NHẬP/ ĐĂNG KÝ</a></li>
+        <li><img src="../Image/icon_login25.png" alt=""><a href="./DangNhap.html"> ĐĂNG NHẬP/ ĐĂNG KÝ</a></li>
       </ul>
     </div>
     <div class="menu">
@@ -49,8 +58,8 @@
           <a href="">RẠP CGV</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <div class="border_dropdown">
-              <a class="dropdown-item" href="../HTML/RapCGV.html">Tất Cả Các Rạp</a>
-              <a class="dropdown-item" href="../HTML/RapDacBiet.html">Rạp Đặc Biệt</a>
+              <a class="dropdown-item" href="#">Tất Cả Các Rạp</a>
+              <a class="dropdown-item" href="./RapDacBiet.html">Rạp Đặc Biệt</a>
               <a class="dropdown-item" href="#">Rạp 3D</a>
             </div>
           </div>
@@ -59,8 +68,8 @@
           <a href="">THÀNH VIÊN</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <div class="border_dropdown">
-              <a class="dropdown-item" href="../HTML/dangky.html">Tài Khoản CGV</a>
-              <a class="dropdown-item" href="../HTML/QuyenLoi.html">Quyền Lợi</a>
+              <a class="dropdown-item" href="#">Tài Khoản CGV</a>
+              <a class="dropdown-item" href="./QuyenLoi.html">Quyền Lợi</a>
             </div>
           </div>
         </li>
@@ -69,20 +78,24 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <div class="border_dropdown">
               <a class="dropdown-item" href="../HTML/MovieVoucher.html">Quầy Online</a>
-              <a class="dropdown-item" href="../HTML/ThueRapVeNhom.html">Thuê Rạp & Vé Nhóm</a>
               <a class="dropdown-item" href="../HTML/E-CGV.html">E-CGV</a>
               <a class="dropdown-item" href="../HTML/CGV-Egifts.html">CGV-EGift</a>
               <a class="dropdown-item" href="../HTML/CGV-Rules.html">CGV Rules</a>
+              <a class="dropdown-item" href="../HTML/ThueRapVeNhom.html">Thuê Rạp & Vé Nhóm</a>
             </div>
           </div>
         </li>
 
       </ul>
-      <img class="Muavengay" src="../Image/mua-ve_ngay.png" alt="">
+      <a class="Muavengay" href="../HTML/MuaVe.html"><img src="../Image/mua-ve_ngay.png" alt=""></a>    
     </div>
   </header>
 
   <div class="faq-wrapper">
+    <!-- <div class="page-title">
+          <h1>Câu hỏi thường gặp</h1>
+        </div> -->
+
     <div class="faq-layout">
       <aside class="faq-sidebar">
         <ul class="faq-menu">
@@ -222,8 +235,8 @@
           <li>Tiện Ích Online</li>
           <li>Thẻ Quà Tặng</li>
           <li>Tuyển Dụng</li>
-          <li><a href='../LienHe.html'>Liên Hệ Quảng Cáo CGV</a></li>
-          <li><a href="../HTML/danhchodoitac.html">Dành Cho Đối Tác</a></li>
+          <li><a href='./LienHe.html'>Liên Hệ Quảng Cáo CGV</a></li>
+          <li>Dành Cho Đối Tác</li>
         </ul>
       </div>
       <div class="Dieukhoan">
@@ -282,24 +295,22 @@
 
 </html>
 <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = item.querySelector('.faq-answer');
 
-  document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-      const item = question.parentElement;
-      const answer = item.querySelector('.faq-answer');
+            // Toggle mở/đóng
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.faq-answer').style.display = 'none';
+            });
 
-      // Toggle mở/đóng
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-answer').style.display = 'none';
-      });
-
-      if (!isOpen) {
-        item.classList.add('open');
-        answer.style.display = 'block';
-      }
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.display = 'block';
+            }
+        });
     });
-  });
-
 </script>
