@@ -24,9 +24,9 @@ body::before {
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(135deg, var(--c1), var(--c2), var(--c3), var(--c4));
+    background: linear-gradient(135deg, var(--c1), var(--c3), var(--c4));
     background-size: 300% 300%;
-    animation: bgShift 15s ease-in-out infinite;
+    animation: bgShift 3s ease-in-out infinite;
 }
 
 @keyframes bgShift {
