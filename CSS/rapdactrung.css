@@ -1,0 +1,106 @@
+.carousel-wrapper {
+    position: relative;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.carousel-container {
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.carousel-card {
+    flex: 0 0 auto;
+    width: 130px;
+    height: 130px;
+    background-color: white;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    font-weight: bold;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #e53935;
+    cursor: pointer;
+}
+
+.arrow-left {
+    left: -1rem;
+}
+
+.arrow-right {
+    right: -1rem;
+}
+
+/* Hide arrows on small screens if needed */
+@media (max-width: 576px) {
+    .carousel-arrow {
+        display: none;
+    }
+}
+
+ul.site-list {
+    counter-reset: tamCounter;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 20px;
+    padding: 0;
+    margin: 0;
+    max-width: 1000px;
+}
+
+ul.site-list li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;     
+    border-radius: 10px;          
+    padding: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 20px;
+}
+
+ul.site-list li:hover {
+    background-color: #e6f7ff;    
+    transform: translateY(-3px);
+}
+
+ul.site-list li::before {
+    counter-increment: tamCounter;
+    content: counter(tamCounter);
+    color: white;
+    background: #636363;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+ul.site-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    width: 100%;
+}
+
+ul.site-list {
+    margin-bottom: 50px;
+    margin-top: 40px;
+}

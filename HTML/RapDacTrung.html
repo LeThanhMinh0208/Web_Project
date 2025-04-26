@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rạp đặc biệt</title>
+    <title>Rạp đặc trưng</title>
     <link rel="shortcut icon" href="../Image/icon_Trang/cgvcinemas-vietnam-favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/rapdacbiet.css">
+    <link rel="stylesheet" href="../CSS/rapdactrung.css">
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="stylesheet" href="../CSS/Footer.css">
     <link rel="stylesheet" href="../Bootstrap/bootstrap.min.css">
     <script src="../Bootstrap/bootstrap.bundle.min.js"></script>
+    <style>
+        .CGV_VN li a{
+            text-decoration: none;
+            color: #666;
+        }
+    </style>
 </head>
 
 <body>
@@ -80,168 +86,100 @@
         <div class="navbar_on_main">
             <p><img style="margin-right: 10px;" src="../Image/bg-cgv-bread-home.png" alt=""><img
                     style="margin-right: 10px;" src="../Image/bg-cgv-icon-arrow.png" alt=""><span
-                    style="text-decoration: underline; font-weight: bold;">Rạp đặc biệt</span></p>
+                    style="text-decoration: underline; font-weight: bold;">Rạp đặc trưng</span></p>
         </div>
-        <div class="contents text-center">
-            <article class="specialtheater_title">
-                <div class="contents">
-                    <strong>TẬN HƯỞNG CẢ THẾ GIỚI ĐIỆN ẢNH TẠI CGV</strong>
-                    <ul class="specialtheater_hash_list">
-                        <li>#Công Nghệ</li>
-                        <li>#Trải nghiệm</li>
-                        <li>#Phong cách</li>
-                    </ul>
-                </div>
-                <div class="clr"></div>
-            </article>
-            <div class="container mt-4">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h1>CÔNG NGHỆ</h1>
-                    <p class="subtitle">Kết hợp toàn diện của 3 yếu tố (màn hình, âm thanh, ghế ngồi) nâng cấp trải
-                        nghiệm và cảm xúc khi
-                        xem
-                        phim</p>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/imax_cgv.jpg"
-                                alt="IMAX">
-                            <div class="card-overlay">
-                                <h3 class="card-title">IMAX</h3>
-                                <p class="card-description">Công nghệ điện ảnh tân tiến nhất</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/17066596473020.jpg"
-                                alt="4DX">
-                            <div class="card-overlay">
-                                <h3 class="card-title">4DX</h3>
-                                <p class="card-description">Đánh thức mọi giác quan</p>
-                            </div>
-                        </div>
+        <div class="contents container text-center">
+            <div class="container my-5 position-relative">
+                <!-- Left Arrow -->
+                <button class="carousel-arrow arrow-left" onclick="scrollCarousel(-1)">
+                    &#10094;
+                </button>
+
+                <!-- Carousel Scrollable Container -->
+                <div class="carousel-wrapper" id="carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-card">STARIUM</div>
+                        <div class="carousel-card">PREMIUM</div>
+                        <div class="carousel-card">SCREEN X</div>
+                        <div class="carousel-card">CINE & FORÊT</div>
+                        <div class="carousel-card">CINE & LIVING ROOM</div>
+                        <div class="carousel-card">CINE & SUITE</div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/17079535042120.jpg"
-                                alt="ULTRA 4DX">
-                            <div class="card-overlay">
-                                <h3 class="card-title">ULTRA 4DX</h3>
-                                <p class="card-description">Trải nghiệm điện ảnh tột đỉnh</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/16844566032440.png"
-                                alt="SCREENX">
-                            <div class="card-overlay">
-                                <h3 class="card-title">SCREENX</h3>
-                                <p class="card-description">Mở rộng thị giác vượt trội</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/Starium-new.jpg"
-                                alt="STARIUM">
-                            <div class="card-overlay">
-                                <h3 class="card-title">STARIUM</h3>
-                                <p class="card-description">Trải nghiệm điện ảnh "vượt xa thực tế"</p>
-                            </div>
-                        </div>
-                    </div>
+
+                <!-- Right Arrow -->
+                <button class="carousel-arrow arrow-right" onclick="scrollCarousel(1)">
+                    &#10095;
+                </button>
+            </div>
+
+            <div class="mt-5">
+                <h1>GOLD CLASS</h1>
+                <p>Lấy cảm hứng từ ghế ngồi hạng thương gia trên máy bay, phòng chiếu GOLD CLASS ra đời mang đến một
+                    không
+                    gian xem phim
+                    sang trọng và đẳng cấp cho các tín đồ điện ảnh. GOLD CLASS còn là lựa chọn hoàn hảo cho các sự kiện
+                    đặc
+                    biệt để tạo nên
+                    những kỷ niệm tuyệt vời, khó quên.
+                </p>
+                <div class="d-flex flex-column"><img alt=""
+                        src="../Image/rap_dac_trung/000.jpg"
+                        style="max-width: 100%;">
+                    <img alt="" src="../Image/rap_dac_trung/001.jpg"
+                        style="max-width: 100%;">
+                    <img alt="" src="../Image/rap_dac_trung/003.jpg"
+                        style="max-width: 100%;">
+                    <img src="../Image/rap_dac_trung/Gold_Class_Page_04.jpg"
+                        style="max-width: 100%;"> <img alt=""
+                        src="../Image/rap_dac_trung/005.jpg"
+                        style="max-width: 100%;"> <img alt=""
+                        src="../Image/rap_dac_trung/006.jpg"
+                        style="max-width: 100%;"><img
+                        src="../Image/rap_dac_trung/GL.jpg"
+                        style="max-width: 100%;">
                 </div>
             </div>
-            <div class="container mt-4">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h1>PHONG CÁCH</h1>
-                    <p class="subtitle">Phòng chiếu theo chủ đề, phong cách độc đáo mang đến trải nghiệm điện ảnh ấn
-                        tượng, đẳng cấp
-                    </p>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/gold-class.jpg"
-                                alt="IMAX">
-                            <div class="card-overlay">
-                                <h3 class="card-title">GOLD CLASS</h3>
-                                <p class="card-description">Ghế ngồi hạng thương gia cao cấp</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/lamour.jpg"
-                                alt="4DX">
-                            <div class="card-overlay">
-                                <h3 class="card-title">L'amour</h3>
-                                <p class="card-description">Giường nằm thoải mái & tiện nghi bậc nhất</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/sweetbox.png"
-                                alt="ULTRA 4DX">
-                            <div class="card-overlay">
-                                <h3 class="card-title">SWEETBOX</h3>
-                                <p class="card-description">Không gian riêng tư & ngọt ngào</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/cine-suite.png"
-                                alt="SCREENX">
-                            <div class="card-overlay">
-                                <h3 class="card-title">CINE & SOOT</h3>
-                                <p class="card-description">Không gian điện ảnh ấm cúng, thoải mái</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/premium-1.png"
-                                alt="STARIUM">
-                            <div class="card-overlay">
-                                <h3 class="card-title">PREMIUM</h3>
-                                <p class="card-description">Ghế ngồi êm ái & thoải mái ngả lưng</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/livingroom2.jpg"
-                                alt="STARIUM">
-                            <div class="card-overlay">
-                                <h3 class="card-title">Cine & Living</h3>
-                                <p class="card-description">Ghế ngồi êm ái & thoải mái ngả lưng</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="technology-card">
-                            <img src="../Image/rap_dac_biet/cineforet.jpg"
-                                alt="STARIUM">
-                            <div class="card-overlay">
-                                <h3 class="card-title">Cine & Forêt</h3>
-                                <p class="card-description">Không gian xanh mát, thoải mái</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h2 style="padding-left: 20px; padding-right: 20px;"><strong>Cùng trải nghiệm phòng chiếu GOLD CLASS tại các
+                    rạp:</strong></h2>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <ul class="site-list">
+                    <li><a href="../HTML/RapCGV.html">CGV Hùng Vương Plaza</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Liberty Citypoint</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Vincom Đồng Khởi</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Indochina Plaza Hà Nội</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Vincom Nguyễn Chí Thanh</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Vincom Xuân Khánh</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Vincom Long Biên</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Vincom Royal City</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Vincom Center Landmark 81</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Tràng Tiền Plaza</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Vincom Hải Phòng</a>
+                    </li>
+                    <li style="padding-left: 20px; padding-right: 20px;"><a
+                            href="../HTML/RapCGV.html">CGV Aeon Hà Đông</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -347,5 +285,12 @@
         </div>
     </footer>
 </body>
+<script>
+    function scrollCarousel(direction) {
+        const container = document.getElementById('carousel');
+        const scrollAmount = 160; // adjust based on card width + gap
+        container.scrollLeft += direction * scrollAmount;
+    }
+</script>
 
 </html>
