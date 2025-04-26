@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Vé Của Tôi</title>
-    <link rel="stylesheet" href="../Bootstrap/bootstrap.css">
-    <script src="../Bootstrap/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U22_VN</title>
+    <link rel="shortcut icon" href="../Image/icon_Trang/cgvcinemas-vietnam-favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="stylesheet" href="../CSS/Footer.css">
-    <script src="../Jquery/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../CSS/u22_vn.css">
+    <link rel="stylesheet" href="../Bootstrap/bootstrap.min.css">
+    <script src="../Bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../JS/Trangchu.js"></script>
+    <style>
+        .CGV_VN li a{
+            text-decoration: none;
+            color: #666;
+        }
+    </style>
 </head>
 
 <body>
@@ -73,98 +82,58 @@
             <a class="Muavengay" href="../HTML/MuaVe.html"><img src="../Image/mua-ve_ngay.png" alt=""></a>
         </div>
     </header>
-    <main style="padding: 0 200px;">
-        <h2 class="mb-4">Vé Của Tôi</h2>
-
-        <table class="table " id="ticketTable">
-            <thead style="background-color: black; color: white;">
-
-                <tr>
-                    <th>STT</th>
-                    <th>Phim</th>
-                    <th>Rạp</th>
-                    <th>Ngày</th>
-                    <th>Suất</th>
-                    <th>Ghế</th>
-                    <th>Combo</th>
-                    <th>Tổng tiền</th>
-                    <th>Vé</th>
-                    <th></th>
-                </tr>
-
-            </thead>
-            <tbody></tbody>
-        </table>
-        <div class="modal fade" id="qrModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Vé Của Bạn</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-center"></div>
-                </div>
-            </div>
+    <main>
+        <div class="navbar_on_main">
+            <p><img style="margin-right: 10px;" src="../Image/bg-cgv-bread-home.png" alt=""><img style="margin-right: 10px;" src="../Image/bg-cgv-icon-arrow.png" alt=""><a style="margin-right: 10px;" href="">News & Offer</a><img style="margin-right: 10px;"
+                    src="../Image/bg-cgv-icon-arrow.png" alt=""><span style="text-decoration: underline; font-weight: bold;">U22 - TRẢI NGHIỆM VƯỢT XA ĐIỆN ẢNH</span></p>
+        </div>
+        <div class="offer">
+            <h1>U22 - Trải Nghiệm Vượt Xa Điện Ảnh</h1>
         </div>
 
+        <div class="u22-experience">
+            <div class="menu-wrapper">
+              <ul class="menu-list">
+                <li><a href="#section-1"><img src="../Image/u22_vn/menu-1-2024-1.png" alt="Menu 1"></a></li>
+                <li><a href="#section-2"><img src="../Image/u22_vn/menu-2-2024-2.png" alt="Menu 2"></a></li>
+                <li><a href="#section-3"><img src="../Image/u22_vn/menu-3-2024-1.png" alt="Menu 3"></a></li>
+                <li><a href="#section-4"><img src="../Image/u22_vn/menu-4-2024-1.png" alt="Menu 4"></a></li>
+              </ul>
+            </div>
+          
+            <!-- Section content -->
+            <div id="section-1"><img src="../Image/u22_vn/body-2-2024-9.png" style="width:100%;" alt="Section 1"></div>
+            <div id="section-2"><img src="../Image/u22_vn/body-3-2024-12.jpg" style="width:100%;" alt="Section 2"></div>
+            <div id="section-3"><img src="../Image/u22_vn/body-4-2024-6.png" style="width:100%;" alt="Section 3"></div>
+            <div id="section-4"><img src="../Image/u22_vn/body-5-2024-3.jpg" style="width:100%;" alt="Section 4"></div>
+        </div>
+          
         <script>
-            function renderTickets() {
-                const tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
-                const $tbody = $('#ticketTable tbody').empty();
-
-                if (!tickets.length) {
-                    $tbody.append('<tr><td colspan="9" class="text-center">Chưa có vé nào.</td></tr>');
-                    return;
-                }
-
-                tickets.forEach((t, idx) => {
-                    const comboTxt = t.combos.map(c => `Combo ${c.id+1} x${c.qty}`).join('<br>');
-                    $tbody.append(`
-        <tr>
-          <td>${idx + 1}</td>
-          <td>${t.movie}</td>
-          <td>${t.cinema} – ${t.city}</td>
-          <td>${t.date}</td>
-          <td>${t.showtime}</td>
-          <td>${t.seats.join(', ')}</td>
-          <td>${comboTxt || '-'}</td>
-          <td>${t.total} đ</td>
-          <td><a href="#" class="view-ticket" data-idx="${idx}">In Vé</a></td>
-          <td><button class="btn btn-sm btn-danger delete-ticket" data-idx="${idx}">X</button></td>
-        </tr>`);
+          document.querySelectorAll('.menu-list a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              if (target) {
+                window.scrollTo({
+                  top: target.offsetTop,
+                  behavior: 'smooth'
                 });
-            }
-
-            // xoá vé riêng lẻ
-            $(document).on('click', '.delete-ticket', function() {
-                const idx = +$(this).data('idx');
-                const tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
-                tickets.splice(idx, 1);
-                localStorage.setItem('tickets', JSON.stringify(tickets));
-                renderTickets();
+              }
             });
-
-            // render lần đầu
-            renderTickets();
-            $(document).on('click', '.view-ticket', function(e) {
-                e.preventDefault();
-                const idx = +$(this).data('idx');
-                const tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
-                const t = tickets[idx];
-
-
-                const ticketImgSrc = "../Image/QR.jpg";
-
-
-                /* Xoá nội dung cũ & chèn <img> mới */
-                $('#qrModal .modal-body')
-                    .empty()
-                    .append(`<img src="${ticketImgSrc}" alt="Vé xem phim" class="img-fluid">`);
-
-                /* Mở modal */
-                new bootstrap.Modal(document.getElementById('qrModal')).show();
+          });
+          
+          const menuItems = document.querySelectorAll('.menu-list li');
+          menuItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+              menuItems.forEach(i => i.classList.add('disable'));
+              item.classList.remove('disable');
             });
+            item.addEventListener('mouseleave', () => {
+              menuItems.forEach(i => i.classList.remove('disable'));
+            });
+          });
         </script>
+        
     </main>
     <footer>
         <div class="footer_logo">
@@ -198,9 +167,10 @@
             <a target="_blank" href="">
                 <img src="../Image/Cine_Live.png" alt="">
             </a>
-            <a target="_blank" href="">
-                <img src="../Image/Cine_Suite.png" alt="">
-            </a>
+            <a href="">
+                <a target="_blank" href="">
+                    <img src="../Image/Cine_Suite.png" alt="">
+                </a>
         </div>
         <div class="footer_connect">
             <div class="CGV_VN">
@@ -210,8 +180,8 @@
                     <li>Tiện Ích Online</li>
                     <li>Thẻ Quà Tặng</li>
                     <li>Tuyển Dụng</li>
-                    <li>Liên Hệ Quảng Cáo CGV</li>
-                    <li>Dành Cho Đối Tác</li>
+                    <li><a href='../LienHe.html'>Liên Hệ Quảng Cáo CGV</a></li>
+                    <li><a href="../HTML/danhchodoitac.html">Dành Cho Đối Tác</a></li>
                 </ul>
             </div>
             <div class="Dieukhoan">
@@ -245,7 +215,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer_company">
             <img src="../Image/CJ_CGV.png" alt="">
             <ul>
@@ -255,10 +224,10 @@
                 <li>Đường dây nóng (Hotline): 1900 6017</li>
                 <li>COPYRIGHT 2017 CJ CGV VIETNAM CO., LTD. ALL RIGHTS RESERVED</li>
             </ul>
-        </div>
-        <br>
-        <div class="footer_background_end"></div>
 
+        </div>
+        <div class="footer_background_end">
+        </div>
     </footer>
 
 </body>

@@ -1,0 +1,93 @@
+.navbar_on_main {
+    background-color: rgb(240, 240, 230);
+    height: 25px;
+    padding-left: 15%;
+}
+
+.navbar_on_main p {
+    margin-top: 0;
+}
+
+.navbar_on_main a {
+    text-decoration: none;
+    color: gray;
+}
+
+.offer {
+    padding-left: 15%;
+    margin: 20px 0px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.offer h1 {
+    color: red;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.main_banner {
+    display: flex;
+    padding: 0 15%;
+    margin-bottom: 70px;
+}
+
+.main_banner img {
+    width: 100%;
+    height: 500px;
+    flex: 1;
+}
+
+.main_baner_text {
+    padding-left: 30px;
+    flex: 2;
+}
+
+.main_banner_text_title {
+    font-weight: bold;
+}
+
+.main_baner_text a {
+    font-size: small;
+    color: rgb(211, 61, 32);
+    text-decoration: none;
+}
+
+/* main */
+
+.u22-experience {
+    max-width: 980px;
+    margin: 0 auto;
+}
+  
+.menu-wrapper {
+    background: url('../Image/u22_vn/bg-body-2024-3.jpg') no-repeat center top;
+    padding: 40px 0;
+}
+  
+.menu-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+  
+.menu-list li img {
+    width: 223px;
+    height: 408px;
+    transition: filter 0.3s;
+}
+  
+.menu-list li.disable img {
+    filter: grayscale(100%);
+}
+  
+@media (max-width: 768px) {
+    .menu-list li img {
+      width: 150px;
+      height: auto;
+    }
+}
