@@ -1,0 +1,210 @@
+.cms-diem-thuong {
+    background-color: #fcf9f0;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-cgv-member-bg h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #3e2c19;
+}
+
+.star {
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 24px;
+    color: red;
+}
+
+/* Bố cục 2 cột */
+.cms-content-diem-thuong {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    /* khoảng cách giữa ảnh và menu */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.col-left-content-member {
+    flex: 0 0 auto;
+}
+
+.col-left-content-member img {
+    width: 400px;
+    height: auto;
+    display: block;
+}
+
+.col-right-content-member {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+/* Đảm bảo phần tử cha có position relative */
+.cgv-membership {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.cgv-membership ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: none;
+    position: absolute;
+    top: -90px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    justify-content: center;
+}
+
+/* Bố trí các tab menu */
+.ui-tabs-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: #f5f2e8;
+    border: none;
+}
+
+
+/* Các tab mặc định */
+.ui-tabs-nav li {
+    background: none;
+    text-align: center;
+    border: 1px solid #c1b7a7;
+    font-weight: bold;
+    font-size: 14px;
+    color: #5c3d14;
+    padding: 12px 5px;
+    margin: 0;
+    cursor: pointer;
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    z-index: 20;
+    /* Đặt z-index cho từng tab để nó luôn ở trên các phần tử khác */
+}
+
+/* Tab Quản lý tài khoản và Bạn cần hỗ trợ */
+.ui-tabs-nav li.membership-manager-account,
+.ui-tabs-nav li.cgv-support {
+    flex: 0 1 20%;
+    min-width: 120px;
+}
+
+/* Đảm bảo các tab này nằm chung một dòng */
+.ui-tabs-nav li:nth-child(4),
+.ui-tabs-nav li:nth-child(5) {
+    grid-column: span 2;
+    /* Chiếm 2 cột, nằm chung một dòng */
+    text-align: center;
+}
+
+/* Tab hover */
+.ui-tabs-nav li:hover {
+    background-color: #e0d8c6;
+}
+
+.ui-tabs-nav li.ui-tabs-active {
+    background: #F7931E;
+    color: #ffffff;
+}
+
+.ui-tabs-nav li.ui-tabs-active a {
+    color: #ffffff;
+}
+
+.cgv-content-wrapper {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #d1c7b7;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #3e2c19;
+}
+
+.content-section p,
+.content-section table {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #3e2c19;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid #d1c7b7;
+    text-align: center;
+}
+
+th {
+    background-color: #f2eee3;
+}
+
+tr.odd {
+    background-color: #f9f6ef;
+}
+
+.CGV_VN li a {
+    text-decoration: none;
+    color: #666;
+}
+
+.lyt-heading {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(229, 222, 204);
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Màu nền cam khi tab active */
+#cgv-vip .ui-accordion-header.ui-state-active {
+    background-color: orange !important;
+    /* Màu cam cho tab active */
+    color: white !important;
+    /* Màu chữ trắng */
+}
+
+#cgv-vip .ui-accordion-header.ui-state-active .ui-icon {
+    display: none;
+}
+
+#cgv-vip .ui-accordion-header .ui-icon {
+    display: none;
+    margin-right: 10px;
+}
