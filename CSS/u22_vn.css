@@ -63,6 +63,7 @@
 .menu-wrapper {
     background: url('../Image/u22_vn/bg-body-2024-3.jpg') no-repeat center top;
     padding: 40px 0;
+    background-size: cover;
 }
   
 .menu-list {
@@ -79,6 +80,7 @@
     width: 223px;
     height: 408px;
     transition: filter 0.3s;
+    margin-top: 350px;
 }
   
 .menu-list li.disable img {
