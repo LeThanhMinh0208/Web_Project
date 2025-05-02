@@ -75,7 +75,7 @@ main {
 }
 
 .col_m img {
-    width: 600px;
+    width: 450px;
 }
 
 .slideshow {
@@ -366,7 +366,9 @@ main {
     color: white;
 }
 
+
 /* hai thanh quảng cáo */
+
 .cms-index-index .mtw_banner_left {
     left: 10px;
     position: fixed;
@@ -397,7 +399,7 @@ main {
     top: 20px;
 }
 
-.CGV_VN li a{
+.CGV_VN li a {
     text-decoration: none;
     color: #666;
 }
