@@ -1,0 +1,188 @@
+.home-title {
+    display: none;
+}
+
+.specialtheater-content .std {
+    padding: 0 5px;
+}
+
+.recent-imax img {
+    max-width: 100%
+}
+
+.site-list {
+    width: 100%;
+}
+
+.site-list li a {
+    color: #000
+}
+
+.site-list li a span {
+    color: #000;
+}
+
+.specialtheater-list .feature_slide_show {
+    clear: both;
+    width: 100%;
+}
+
+.specialtheater-list {
+    border-bottom: 2px solid #d2cfc6;
+    /* display: inline-block; */
+    /* padding-bottom: 0; */
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.special-items li {
+    width: 96px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+/* Căn giữa nội dung */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.col-main {
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Chỉnh sửa layout chung cho slider */
+.swiper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wrapper của các slide */
+.swiper-wrapper {
+    display: flex;
+    transition: transform 0.3s ease;
+    align-items: center;
+    
+}
+
+/* Mỗi slide có kích thước và khoảng cách */
+.swiper-slide {
+    width: 160px;
+    height: 160px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+.swiper-slide img {
+    width: auto;
+    height: auto;
+    max-width: 40%;
+    max-height: 40%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Nút mũi tên điều hướng */
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(30%);
+    z-index: 10;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 50%;
+    color: red;
+    border: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* Nút mũi tên trước */
+.swiper-button-prev {
+    left: -60px;
+    margin-top: 20px;
+}
+
+/* Nút mũi tên sau */
+.swiper-button-next {
+    right: -60px;
+}
+
+
+/* Điều chỉnh chỉ cho hình ảnh 3D */
+.swiper-slide img[src*="../Image/3d/3d.png"] {
+    width: 15%;
+    height: auto;
+    object-fit: contain; 
+}
+
+
+.swiper {
+    position: relative;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.slideshow-container-dx li{
+    list-style: none;
+}
+
+.specialtheater-content{
+    margin-top: 100px;
+}
+
+.image-cinema-imax-wrapper {
+    position: relative;
+}
+
+.text-content-imax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%; /* Điều chỉnh độ rộng vùng overlay */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Nền đen mờ */
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-content-imax h2 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.text-content-imax p {
+    font-size: 15px;
+    line-height: 1.5;
+}
